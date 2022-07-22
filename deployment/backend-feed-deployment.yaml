@@ -15,6 +15,25 @@ spec:
       containers:
       - name: backend-feed
         image: docker.io/elochukwu/udagram-api-feed:v8
+        env:
+        - name: POSTGRES_USERNAME
+          value: udagramdb
+        - name: POSTGRES_PASSWORD
+          value: udagramdb
+        - name: POSTGRES_HOST
+          value: udagramdb.cy2dnceazjvm.us-east-1.rds.amazonaws.com
+        - name: POSTGRES_DB
+          value: postgres
+        - name: AWS_BUCKET
+          value: udagrambk
+        - name: AWS_REGION
+          value: us-east-1
+        - name: AWS_PROFILE
+          value: default
+        - name: JWT_SECRET
+          value: hello
+        - name: URL
+          value: http://localhost:8100
         ports:
         - containerPort: 80
         resources:
